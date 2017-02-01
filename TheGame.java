@@ -13,7 +13,7 @@ public class TheGame extends JFrame
 
 	public TheGame()
 	{
-		super("PONG");
+		super("AIR HOCKEY");
 		setSize(WIDTH,HEIGHT);
 
 		Pong game = new Pong();

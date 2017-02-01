@@ -61,7 +61,7 @@ public class Ball extends Block implements Collidable
 	}
 	public boolean didCollideTop(Object obj)
 	{
-		if((getX()>=((Locatable) obj).getX()-10-getWidth()&&getX()<=((Locatable) obj).getX()-10+getWidth())&&
+		if((getX()>=((Locatable) obj).getX()+10-getWidth()&&getX()<=((Locatable) obj).getX()-10+getWidth())&&
 			    (getY()>=((Locatable) obj).getY()&&getY()<=((Locatable) obj).getY()+((Block) obj).getHeight()))
 					return true;
 		else
@@ -69,14 +69,19 @@ public class Ball extends Block implements Collidable
 	}
 	public boolean didCollideBottom(Object obj)
 	{
-		if((getX()>=((Locatable) obj).getX()-10-getWidth()&&getX()<=((Locatable) obj).getX()-10+getWidth())&&
+		if((getX()>=((Locatable) obj).getX()+10-getWidth()&&getX()<=((Locatable) obj).getX()-10+getWidth())&&
 			    (getY()+ getHeight()>=((Locatable) obj).getY()&&getY()+ getHeight()<=((Locatable) obj).getY()+((Block) obj).getHeight()))
 					return true;
 		else
 			return false;
 	}
 	
-	
+	public void setPos(Graphics window, int x, int y)
+	   {
+		window.setColor(Color.WHITE);
+	    window.fillRect(getX(), getY(), getWidth(), getHeight());
+	    setPos(x,y);
+	   }
 	
 	
 	

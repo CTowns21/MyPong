@@ -41,7 +41,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		
 
 
-		keys = new boolean[5];
+		keys = new boolean[7];
 
 
 		setBackground(Color.WHITE);
@@ -89,6 +89,22 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		{
 			rightPaddle.moveDownAndDraw(window);
 		}
+		if(keys[4] == true)
+		{
+			leftPaddle.moveLeftAndDraw(window);
+		}
+		if(keys[5] == true)
+		{
+			leftPaddle.moveRightAndDraw(window);
+		}
+		if(keys[6] == true)
+		{
+			rightPaddle.moveLeftAndDraw(window);
+		}
+		if(keys[7] == true)
+		{
+			rightPaddle.moveRightAndDraw(window);
+		}
 	}
 
 	public void keyPressed(KeyEvent e)
@@ -96,9 +112,13 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		switch(toUpperCase(e.getKeyChar()))
 		{
 			case 'W' : keys[0]=true; break;
-			case 'Z' : keys[1]=true; break;
+			case 'S' : keys[1]=true; break;
 			case 'I' : keys[2]=true; break;
-			case 'M' : keys[3]=true; break;
+			case 'K' : keys[3]=true; break;
+			case 'A' : keys[4]=true; break;
+			case 'D' : keys[5]=true; break;
+			case 'J' : keys[6]=true; break;
+			case 'L' : keys[7]=true; break;
 		}
 	}
 
@@ -107,9 +127,13 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		switch(toUpperCase(e.getKeyChar()))
 		{
 			case 'W' : keys[0]=false; break;
-			case 'Z' : keys[1]=false; break;
+			case 'S' : keys[1]=false; break;
 			case 'I' : keys[2]=false; break;
-			case 'M' : keys[3]=false; break;
+			case 'K' : keys[3]=false; break;
+			case 'A' : keys[4]=true; break;
+			case 'D' : keys[5]=true; break;
+			case 'J' : keys[6]=true; break;
+			case 'L' : keys[7]=true; break;
 		}
 	}
 
